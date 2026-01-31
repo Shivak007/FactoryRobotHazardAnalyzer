@@ -1,7 +1,15 @@
 import java.util.Scanner;
-
+/**
+ * Factory Robot Hazard Analyzer
+ * UC3: Calculate Robot Hazard Risk (No Validation)
+ *
+ * @author Shiva Kumar
+ * @version 1.0
+ */
 public class FactoryRobotHazardAnalyzer {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter Arm Precision (0.0 - 1.0): ");
@@ -14,8 +22,8 @@ public class FactoryRobotHazardAnalyzer {
         System.out.print("Enter Machinery State (Worn/Faulty/Critical): ");
         String machineryState = sc.nextLine();
 
-        System.out.println("Arm Precision: " + armPrecision);
-        System.out.println("Worker Density: " + workerDensity);
-        System.out.println("Machinery State: " + machineryState);
+        double risk = ((1.0 - armPrecision) * 15.0) + (workerDensity * 3.0);
+
+        System.out.println("Robot Hazard Risk Score: " + risk);
     }
 }
